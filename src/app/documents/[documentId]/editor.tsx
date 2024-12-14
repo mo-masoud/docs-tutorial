@@ -4,6 +4,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
+import Link from "@tiptap/extension-link";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
 import TaskItem from "@tiptap/extension-task-item";
@@ -55,6 +56,11 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      Link.configure({
+        // openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https",
+      }),
       Color,
       Highlight.configure({ multicolor: true }),
       FontFamily,
