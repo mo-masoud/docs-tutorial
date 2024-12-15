@@ -4,6 +4,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
+import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
@@ -56,8 +57,11 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
       Link.configure({
-        // openOnClick: false,
+        openOnClick: false,
         autolink: true,
         defaultProtocol: "https",
       }),
@@ -77,22 +81,7 @@ export const Editor = () => {
         nested: true,
       }),
     ],
-    content: `
-      <table>
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th colspan="3">Description</th>
-          </tr>
-          <tr>
-            <td>Cyndi Lauper</td>
-            <td>Singer</td>
-            <td>Songwriter</td>
-            <td>Actress</td>
-          </tr>
-        </tbody>
-      </table>
-    `,
+    content: ``,
   });
 
   return (
