@@ -87,7 +87,6 @@ export const Editor = () => {
         nested: true,
       }),
     ],
-    content: ``,
   });
 
   return (
